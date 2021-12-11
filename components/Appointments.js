@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
+import { View, FlatList, Text, StyleSheet } from 'react-native';
 
 import AppointmentItem from './AppointmentItem';
 
@@ -72,6 +72,10 @@ const Appointments = (props) => {
     return item.appointmentId;
   };
 
+  if (!appointments || !appointments.length) { 
+    return <View style={styles.noAppointmentContainer}><Text style={styles.noAppointmentText}>There is no appointment</Text></View>
+  }
+
   return (
     <View style={styles.list}>
       <FlatList
@@ -84,6 +88,15 @@ const Appointments = (props) => {
 };
 
 const styles = StyleSheet.create({
+  noAppointmentContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  noAppointmentText: {
+    fontSize: 16,
+    fontWeight: 'bold'
+  },  
   list: {
     backgroundColor: '#fff',
     flex: 1,

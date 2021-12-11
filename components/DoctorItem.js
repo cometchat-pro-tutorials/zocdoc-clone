@@ -17,7 +17,7 @@ const DoctorItem = ({ item, onItemClick }) => {
         <Image style={styles.listItemImage} source={{ uri: item.avatar }} />
         <View style={styles.listItemDescriptionContainer}>
           <Text style={styles.listItemFullname}>Dr. {item.fullname}</Text>
-          <Text style={styles.listItemBio}>{item.bio}</Text>
+          <Text style={styles.listItemBio}>Primary Care Doctor</Text>
           <View style={styles.listItemRatingWrapper}>
             <AirbnbRating
               isDisabled

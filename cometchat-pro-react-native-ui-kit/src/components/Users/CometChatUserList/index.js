@@ -69,6 +69,8 @@ class CometChatUserList extends React.PureComponent {
         this.UserListManager = new UserListManager();
         this.UserListManager.initializeUsersRequest()
           .then((response) => {
+            console.log(response);
+            this.UserListManager.usersRequest = response;
             this.getUsers();
             this.UserListManager.attachListeners(this.userUpdated);
           })

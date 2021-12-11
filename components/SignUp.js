@@ -53,6 +53,10 @@ const SignUp = () => {
   };
 
   const isSignupValid = ({ fullname, email, role, password, confirmPassword }) => {
+    if (!userAvatar) { 
+      showMessage('Error', 'Please upload your avatar');
+      return false;
+    }
     if (validator.isEmpty(fullname)) {
       showMessage('Error', 'Please input your full name');
       return false;

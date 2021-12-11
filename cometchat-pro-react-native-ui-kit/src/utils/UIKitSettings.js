@@ -23,7 +23,7 @@ export class UIKitSettings {
     this.foregroundColor = '';
     this.overrideSystemBackgroundColor = '';
 
-    this.userListMode = UIKitSettings.userListFilterOptions['ALL'];
+    this.userListMode = UIKitSettings.userListFilterOptions['FRIENDS'];
     this.groupInMode =
       UIKitSettings.groupListFilterOptions['PUBLIC_AND_PASSWORD']; //left
     this.chatListMode = UIKitSettings.chatListFilterOptions['USERS_AND_GROUPS'];
