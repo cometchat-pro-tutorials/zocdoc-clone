@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, TouchableOpacity, Image, Alert, StyleSheet, Text, Platform } from 'react-native';
+import { View, TouchableOpacity, Image, Alert, StyleSheet, Text, Platform, PermissionsAndroid } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -24,6 +24,7 @@ const App = () => {
   useEffect(() => {
     initCometChat();
     initAuthenticatedUser();
+    getPermissions();
   }, []);
 
   const initCometChat = async () => {
@@ -44,6 +45,25 @@ const App = () => {
   const initAuthenticatedUser = async () => {
     const authenticatedUser = await AsyncStorage.getItem('auth');
     setUser(() => authenticatedUser ? JSON.parse(authenticatedUser) : null);
+  };
+
+  const getPermissions = async () => {
+    if (Platform.OS === 'android') {
+      let granted = await PermissionsAndroid.requestMultiple([
+        PermissionsAndroid.PERMISSIONS.CAMERA,
+        PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+        PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+      ]);
+      if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
+        granted = await PermissionsAndroid.requestMultiple([
+          PermissionsAndroid.PERMISSIONS.CAMERA,
+          PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+          PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+        ]);
+      }
+    }
   };
 
   const handleLogout = (navigation) => {
