@@ -202,7 +202,7 @@ PODS:
     - React-Core
   - react-native-get-random-values (1.7.1):
     - React-Core
-  - react-native-image-picker (4.3.0):
+  - react-native-image-picker (3.8.1):
     - React-Core
   - react-native-keep-awake (4.0.0):
     - React
@@ -472,7 +472,7 @@ SPEC CHECKSUMS:
   react-native-cometchat-rtc: e1aac9a0dbed313662ed8eea1c16e942aea1a623
   react-native-document-picker: 20f652c2402d3ddc81f396d8167c3bd978add4a2
   react-native-get-random-values: 2c4ff6b44cb71291dabe9a8ae87d3877dcf387da
-  react-native-image-picker: 869530859570f2af86ae57bc48886a5e2367a825
+  react-native-image-picker: 31971f6184e7c1dcb4fc1f122e1ba2c3fb11ef1e
   react-native-keep-awake: afad8a51dfef9fe9655a6344771be32c8596d774
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
   react-native-video: a4c2635d0802f983594b7057e1bce8f442f0ad28
