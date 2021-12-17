@@ -78,7 +78,7 @@ const DoctorDetail = ({ route }) => {
 
   const createFirebaseAppointment = async () => {
     const id = uuidv4();
-    const createdAppointment = { id, patientName: user.fullname, patientId: user.id, patientImage: user.avatar, doctorName: item.fullname, doctorId: item.id, doctorImage: item.avatar };
+    const createdAppointment = { id, patientName: user.fullname, patientId: user.id, patientImage: user.avatar, patientBio: user.bio ? user.bio : '', doctorName: item.fullname, doctorId: item.id, doctorImage: item.avatar, doctorBio: item.bio ? item.bio : '' };
     await databaseSet(databaseRef(database, 'appointments/' + id), createdAppointment);
   };
 

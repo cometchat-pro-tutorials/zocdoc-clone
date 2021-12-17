@@ -50,7 +50,7 @@ const Appointments = (props) => {
     const isPatient = user.role === 'Patient';
     const transformedAppointments = [];
     for (const appointment of appointments) {
-      transformedAppointments.push({ appointmentId: appointment.id, id: isPatient ? appointment.doctorId : appointment.patientId, fullname: isPatient ? appointment.doctorName : appointment.patientName, avatar: isPatient ? appointment.doctorImage : appointment.patientImage });
+      transformedAppointments.push({ appointmentId: appointment.id, id: isPatient ? appointment.doctorId : appointment.patientId, fullname: isPatient ? appointment.doctorName : appointment.patientName, avatar: isPatient ? appointment.doctorImage : appointment.patientImage, bio: isPatient ? appointment.doctorBio : appointment.patientBio });
     }
     return transformedAppointments;
   }
